@@ -1,0 +1,27 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: svc-risk-service
+  cloud:
+    kubernetes:
+      reload:
+        enabled: true
+management:
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    restart:
+      enabled: true
+backend:
+  ribbon:
+    eureka:
+      enabled: false
+    client:
+       enabled: true
+    ServerListRefreshInterval: 5000
+
+hystrix.command.BackendCall.execution.isolation.thread.timeoutInMilliseconds: 5000
+hystrix.threadpool.BackendCallThread.coreSize: 5
