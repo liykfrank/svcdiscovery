@@ -3,7 +3,6 @@ package com.frank.demo.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.frank.demo.AgencyServiceClient;
@@ -19,7 +18,8 @@ public class RiskController {
 
 	@RequestMapping("/greeting")
 	public String getGreeting() {
-		LOGGER.info(String.format("Hello from %s!", this.agencySvc.getName()));
-		return String.format("Hello from %s!", this.agencySvc.getName());
+		String res = this.agencySvc.getName();
+		LOGGER.info(String.format("Hello from %s!", res));
+		return String.format("Hello from %s!", res);
 	}
 }
