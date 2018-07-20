@@ -96,6 +96,8 @@ Hello from name-service-1-0ss0r!
 ```
 ![](images/risk1.png?raw=true)
 ![](images/risk2.png?raw=true)
+
+![alt-text](images/loadbalance.gif)
 As Ribbon will question the Kubernetes API to get, base on the `name-service` name, the list of IP Addresses assigned to the service as endpoints,
 you should see that you will get a different response from one of the 2 pods running
 
