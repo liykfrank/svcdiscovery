@@ -94,8 +94,7 @@ contains a different id end of the message which corresponds to the name of the 
 ```
 Hello from name-service-1-0ss0r!
 ```
-![](images/risk1.png?raw=true)
-![](images/risk2.png?raw=true)
+
 
 ![alt-text](images/loadbalance.gif)
 As Ribbon will question the Kubernetes API to get, base on the `name-service` name, the list of IP Addresses assigned to the service as endpoints,
