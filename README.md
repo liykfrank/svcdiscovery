@@ -92,12 +92,6 @@ name-service-1-fblp1   1/1       Running   0          36m
 
 If you issue the curl request to access the greeting service, you should see that the message response
 contains a different id end of the message which corresponds to the name of the pod.
-
-```
-Hello from name-service-1-0ss0r!
-```
-![](images/risk1.png?raw=true)
-![](images/risk2.png?raw=true)
 ![](images/loadbalance.gif?raw=true)
 As Ribbon will question the Kubernetes API to get, base on the `name-service` name, the list of IP Addresses assigned to the service as endpoints,
 you should see that you will get a different response from one of the 2 pods running
