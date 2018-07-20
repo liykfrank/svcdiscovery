@@ -3,6 +3,7 @@ This is a fork of https://github.com/liykfrank/spring-cloud-kubernetes/tree/mast
 
 This example demonstrates how to use [Hystrix circuit breaker](https://martinfowler.com/bliki/CircuitBreaker.html) and the [Ribbon Load Balancing](http://microservices.io/patterns/client-side-discovery.html). The circuit breaker which is backed with Ribbon will check regularly if the target service is still alive. If this is not loner the case, then a fall back process will be excuted. In our case, the REST `greeting service` which is calling the `name Service` responsible to generate the response message will reply a "fallback message" to the client if the `name service` is not longer replying.
 As the Ribbon Kubernetes client is configured within this example, it will fetch from the Kubernetes API Server, the list of the endpoints available for the name service and loadbalance the request between the IP addresses available
+![](images/svc-lb.png?raw=true)
 
 ### Build/Deploy using Minishift
 
@@ -94,9 +95,8 @@ contains a different id end of the message which corresponds to the name of the 
 ```
 Hello from name-service-1-0ss0r!
 ```
-
-
-![alt-text](images/loadbalance.gif)
+![](images/risk1.png?raw=true)
+![](images/risk2.png?raw=true)
 As Ribbon will question the Kubernetes API to get, base on the `name-service` name, the list of IP Addresses assigned to the service as endpoints,
 you should see that you will get a different response from one of the 2 pods running
 
