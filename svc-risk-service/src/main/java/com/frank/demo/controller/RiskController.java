@@ -12,9 +12,19 @@ public class RiskController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RiskController.class);
 	private final AgencyServiceClient agencySvc;
 
+	private final String hostName = System.getenv("HOSTNAME");
+
+
 	public RiskController(AgencyServiceClient client) {
 		this.agencySvc = client;
 	}
+
+	@RequestMapping("/")
+	public String ribbonPing() {
+		LOGGER.info("Ribbon ping");
+		return this.hostName+" from risk-service";
+	}
+
 
 	@RequestMapping("/greeting")
 	public String getGreeting() {
