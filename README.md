@@ -131,3 +131,10 @@ Hello from Fallback!
 
 ## Trouble Shooting
 oc grant permission for default user, to let this user has proper permission to access kubernetes service in this project
+
+need to grant view permission:
+```
+oc policy add-role-to-user view system:serviceaccount:myproject:default
+oc policy add-role-to-user cluster-reader system:serviceaccount:myproject:default
+```
+
