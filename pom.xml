@@ -9,5 +9,6 @@
   <modules>
     <module>svc-agency-service</module>
     <module>svc-risk-service</module>
+    <module>svc-gateway</module>
   </modules>
 </project>
