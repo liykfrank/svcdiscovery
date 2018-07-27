@@ -27,6 +27,12 @@ import org.springframework.web.client.RestTemplate;
 
 import reactor.core.publisher.Mono;
 
+/**
+ * docker rmi $(docker images --filter "dangling=true" -q)
+
+ * @author frank
+ *
+ */
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableCircuitBreaker

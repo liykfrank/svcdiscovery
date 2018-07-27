@@ -136,5 +136,8 @@ need to grant view permission:
 ```
 oc policy add-role-to-user view system:serviceaccount:myproject:default
 oc policy add-role-to-user cluster-reader system:serviceaccount:myproject:default
+
+docker rmi $(docker images --filter "dangling=true" -q)
+ 
 ```
 
